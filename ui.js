@@ -2,21 +2,21 @@ const container = document.querySelector('#container');
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
-   button.addEventListener('click', () => {
+    button.addEventListener('click', () => {
        console.log(button.className);
        playRound(button.className, computerPlay());
    });
 });
 
-const popUp = document.createElement('div');
-popUp.innerText = "CONGRATS!";
-popUp.classList.toggle('toggle');
-container.appendChild(popUp);
+// const popUp = document.createElement('div');
+// popUp.innerText = "CONGRATS!";
+// popUp.classList.toggle('toggle');
+// container.appendChild(popUp);
 
 
 
 
-let computerChoices = ["rock", "paper", "scissors"];
+const computerChoices = ["rock", "paper", "scissors"];
 
 function computerPlay() {
     return computerChoices[Math.floor(Math.random() * computerChoices.length)];
