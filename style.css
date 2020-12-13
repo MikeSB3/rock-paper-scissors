@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -12,7 +13,6 @@ body {
 }
 
 #container {
-    box-sizing: border-box;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -22,7 +22,11 @@ body {
 }
 
 #results {
-    border: 2px solid black;
+    padding: 30px;
+    border-radius: 5px;
+    margin: 0 0 60px 0;
+    background-color: black;
+    color: white;
 }
 
 button {
@@ -30,11 +34,12 @@ button {
     text-transform: uppercase;
     text-decoration: none;
     padding: 20px;
-    margin: 0 20px;
+    margin: 20px;
     border-radius: 50px;
     display: inline-block;
     border: none;
     transition: all 0.4s ease 0s;
+    width: 120px;
 }
 
 button:focus {
@@ -61,5 +66,13 @@ button:hover {
 }
 
 #game-score {
-    border: 2px solid red;
+    padding: 30px;
+    border-radius: 5px;
+    margin: 60px 0 0 0;
+    background-color: black;
+    color: white;
+}
+
+.hidden {
+    visibility: hidden;
 }

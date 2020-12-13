@@ -1,22 +1,22 @@
 const container = document.querySelector('#container');
 const buttons = document.querySelectorAll('button');
 
+const scoreBox = document.querySelector('#game-score');
+const scoreMessage = document.createElement('p');
+scoreBox.appendChild(scoreMessage);
+
+const computerChoices = ["rock", "paper", "scissors"];
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
        console.log(button.className);
        playRound(button.className, computerPlay());
    });
+    button.addEventListener('click', () => {
+        scoreBox.classList.remove('hidden');
+    })
+
 });
-
-// const popUp = document.createElement('div');
-// popUp.innerText = "CONGRATS!";
-// popUp.classList.toggle('toggle');
-// container.appendChild(popUp);
-
-
-
-
-const computerChoices = ["rock", "paper", "scissors"];
 
 function computerPlay() {
     return computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -24,24 +24,24 @@ function computerPlay() {
 
 function playRound(player, computer) {
     if (player === computer) {
-        return console.log("Tie game!");
+        scoreMessage.innerText = 'Tie game!';
     }
 
     if (player === "rock" && computer === "scissors") {
-        console.log(`Player wins! ${player} beats ${computer}`);
+        scoreMessage.innerText = `Player wins! ${player} beats ${computer}`;
     } else if (player === "rock" && computer === "paper") {
-        console.log(`Computer wins! ${computer} beats ${player}`);
+        scoreMessage.innerText = `Computer wins! ${computer} beats ${player}`;
     }
 
     if (player === "paper" && computer === "rock") {
-        console.log(`Player wins! ${player} beats ${computer}`);
+        scoreMessage.innerText = `Player wins! ${player} beats ${computer}`;
     } else if (player === "paper" && computer === "scissors") {
-        console.log(`Computer wins! ${computer} beats ${player}`);
+        scoreMessage.innerText = `Computer wins! ${computer} beats ${player}`;
     }
 
     if (player === "scissors" && computer === "paper") {
-        console.log(`Player wins! ${player} beats ${computer}`);
+        scoreMessage.innerText = `Player wins! ${player} beats ${computer}`;
     } else if (player === "scissors" && computer === "rock") {
-        console.log(`Computer wins! ${computer} beats ${player}`);
+        scoreMessage.innerText = `Computer wins! ${computer} beats ${player}`;
     }
 }
